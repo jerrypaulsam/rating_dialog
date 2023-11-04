@@ -193,6 +193,8 @@ class _RatingDialogState extends State<RatingDialog> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0),
       ),
+      insetPadding: EdgeInsets.symmetric(vertical: 25, horizontal: 5),
+
       titlePadding: EdgeInsets.zero,
       scrollable: true,
       title: _content,
