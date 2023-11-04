@@ -82,7 +82,8 @@ class _RatingDialogState extends State<RatingDialog> {
 
   @override
   Widget build(BuildContext context) {
-    final _content = Stack(
+    final _content = SizedBox(
+      child: Stack(
       alignment: Alignment.topRight,
       children: <Widget>[
         ClipRRect(
@@ -130,10 +131,28 @@ class _RatingDialogState extends State<RatingDialog> {
                         textAlign: TextAlign.center,
                         textInputAction: TextInputAction.newline,
                         minLines: 1,
-                        maxLines: 5,
+                        maxLines: 5,                    
                         decoration: InputDecoration(
+                          hintStyle: Theme.of(context).textTheme.bodyMedium,  
                           hintText: widget.commentHint,
-                        ),
+                          contentPadding:
+                              const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+                          fillColor: Theme.of(context).canvasColor,
+                          enabledBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(width: 1, color: Theme.of(context).highlightColor),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(width: 2, color: Theme.of(context).colorScheme.primary),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(width: 1, color: Theme.of(context).errorColor),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                        )
                       )
                     : const SizedBox(height: 15),
                 TextButton(
@@ -165,7 +184,8 @@ class _RatingDialogState extends State<RatingDialog> {
           )
         ]
       ],
-    );
+    )
+  );
 
     return AlertDialog(
       shape: RoundedRectangleBorder(
