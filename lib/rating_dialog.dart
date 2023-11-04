@@ -90,7 +90,7 @@ class _RatingDialogState extends State<RatingDialog> {
         ClipRRect(
           borderRadius: BorderRadius.circular(20.0),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(25, 30, 25, 5),
+            padding: const EdgeInsets.fromLTRB(5, 25, 25, 5),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
