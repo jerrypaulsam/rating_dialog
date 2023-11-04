@@ -196,7 +196,7 @@ class _RatingDialogState extends State<RatingDialog> {
       titlePadding: EdgeInsets.zero,
       scrollable: true,
       title: _content,
-      content: const SizedBox(width: MediaQuery.of(context).size.width),
+      content: SizedBox(width: MediaQuery.of(context).size.width),
     );
   }
 }
