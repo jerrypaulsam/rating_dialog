@@ -82,15 +82,13 @@ class _RatingDialogState extends State<RatingDialog> {
 
   @override
   Widget build(BuildContext context) {
-    final _content = SizedBox(
-      width: MediaQuery.of(context).size.width,
-      child: Stack(
+    final _content = Stack(
       alignment: Alignment.topRight,
       children: <Widget>[
         ClipRRect(
           borderRadius: BorderRadius.circular(20.0),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(5, 25, 25, 5),
+            padding: const EdgeInsets.fromLTRB(25, 30, 25, 5),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -126,7 +124,7 @@ class _RatingDialogState extends State<RatingDialog> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 15),
                 widget.enableComment
                     ? TextField(
                         controller: _commentController,
@@ -157,6 +155,9 @@ class _RatingDialogState extends State<RatingDialog> {
                         )
                       )
                     : const SizedBox(height: 15),
+                
+                const SizedBox(height: 10),
+                
                 TextButton(
                   child: Text(
                     widget.submitButtonText,
@@ -186,8 +187,7 @@ class _RatingDialogState extends State<RatingDialog> {
           )
         ]
       ],
-    )
-  );
+    );
 
     return AlertDialog(
       shape: RoundedRectangleBorder(
@@ -196,6 +196,7 @@ class _RatingDialogState extends State<RatingDialog> {
       titlePadding: EdgeInsets.zero,
       scrollable: true,
       title: _content,
+      content: const SizedBox(width: MediaQuery.of(context).size.width,
     );
   }
 }
