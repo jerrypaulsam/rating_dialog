@@ -83,6 +83,7 @@ class _RatingDialogState extends State<RatingDialog> {
   @override
   Widget build(BuildContext context) {
     final _content = SizedBox(
+      width: MediaQuery.of(context).size.width,
       child: Stack(
       alignment: Alignment.topRight,
       children: <Widget>[
@@ -125,6 +126,7 @@ class _RatingDialogState extends State<RatingDialog> {
                     ),
                   ),
                 ),
+                const SizedBox(height: 10),
                 widget.enableComment
                     ? TextField(
                         controller: _commentController,
