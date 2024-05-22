@@ -149,7 +149,7 @@ class _RatingDialogState extends State<RatingDialog> {
                           ),
                           errorBorder: OutlineInputBorder(
                             borderSide:
-                                BorderSide(width: 1, color: Theme.of(context).colorScheme.errorColor),
+                                BorderSide(width: 1, color: Theme.of(context).colorScheme.error),
                             borderRadius: BorderRadius.circular(15),
                           ),
                         )
